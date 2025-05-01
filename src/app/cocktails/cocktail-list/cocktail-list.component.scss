@@ -1,0 +1,14 @@
+.cocktail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+app-cocktail {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+app-search-bar {
+  margin: 2em;
+}

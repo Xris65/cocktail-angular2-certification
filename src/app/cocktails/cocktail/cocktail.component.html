@@ -1,0 +1,34 @@
+<mat-card>
+  <div class="back-button">
+    <button [routerLink]="'/cocktails/'" mat-raised-button>
+      <mat-icon>home</mat-icon>
+      <span>Back</span>
+    </button>
+  </div>
+  @if (cocktail) {
+    <div class="card-content">
+      <img [src]="cocktail.imageUrl" class="cocktail-image" [alt]="cocktail.name" mat-card-image>
+      <div class="text-content">
+        <mat-card-header>
+          <mat-card-title>{{ cocktail.name }}</mat-card-title>
+          <span (click)="toggleFavorite(cocktail.id)" [id]="'star-' + cocktail.id"
+                [ngClass]="isFavorite(cocktail.id) ? 'active' : ''"
+                class="icon-star"></span>
+          <mat-card-subtitle>Type: <span [isAlcoholic]="cocktail.isAlcoholic"
+                                         is-alcoholic></span>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <h3>Ingredients:</h3>
+          <ul>
+            @for (ingredient of cocktail.ingredients; track cocktail.id) {
+              <li>{{ ingredient }}</li>
+            }
+          </ul>
+          <h3>Instructions:</h3>
+          <p>{{ cocktail.instructions }}</p>
+        </mat-card-content>
+      </div>
+    </div>
+  }
+</mat-card>

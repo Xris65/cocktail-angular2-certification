@@ -1,0 +1,8 @@
+<app-search-bar (filterCocktails)="filterOnInput($event)"></app-search-bar>
+<button (click)="clearFavorites()" mat-stroked-button>Clear all favorites</button>
+<div class="cocktail-container">
+  @for (cocktail of cocktails; track cocktail.id) {
+    <app-cocktail [cocktailDto]="cocktail" (toggleFavoriteOutput)="toggleFavorite($event)"
+                  [isFavorite]="isFavorite(cocktail.id)"></app-cocktail>
+  }
+</div>

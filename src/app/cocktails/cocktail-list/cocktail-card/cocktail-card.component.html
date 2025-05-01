@@ -1,0 +1,16 @@
+<mat-card class="cocktail-card">
+  <mat-card-header>
+    <h1 class="cocktail-title">
+      <a [routerLink]="'/cocktails/' + cocktailDto.id"> {{ cocktailDto.name }}</a>
+    </h1>
+  </mat-card-header>
+  <span (click)="this.toggleFavorite(cocktailDto.id)" [id]="'star-' + cocktailDto.id"
+        [ngClass]="isFavorite ? 'active' : ''" class="icon-star">
+  </span>
+  <img [alt]="cocktailDto.name" [src]="cocktailDto.imageUrl" class="cocktail-image">
+  <mat-card-content>
+      <span [isAlcoholic]="cocktailDto.isAlcoholic" class="alcoholic-status"
+            is-alcoholic></span>
+    <span class="ingredients">{{ cocktailDto.ingredients.join(" | ") }}</span>
+  </mat-card-content>
+</mat-card>

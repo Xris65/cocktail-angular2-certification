@@ -1,0 +1,25 @@
+.card-content {
+  display: flex;
+  align-items: flex-start;
+  margin: 2em;
+}
+
+.cocktail-image {
+  width: 50%;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
